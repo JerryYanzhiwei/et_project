@@ -10,7 +10,6 @@
       <img src="../../../assets/img/ios_btn.png" alt="">
       <img src="../../../assets/img/android_btn.png" alt="">
     </div>
-    <img class="down_arror" src="../../../assets/img/down_arror.png" alt="">
   </swiper-slide>
 </template>
 
@@ -22,21 +21,22 @@ export default {
 
 <style lang="scss" scoped>
   .swiper-slide {
+    padding-top: 1.5rem;
     .page_title {
-      padding-top: 12%;
-      font-size: 25px;
+      padding-top: .12rem;
+      font-size: .4rem;
     }
     .img_main{
       width: 100%;
       height: auto;
-      margin-top: 15%;
+      margin-top: .15rem;
     }
     .link_contain{
-      margin-top: 7%;
+      margin-top: .7rem;
       a {
         font-size: 12px;
         color: #3A7FF3;
-        margin-right: 5%;
+        margin-right: .5rem;
       }
       span {
         font-size: 12px;
@@ -44,15 +44,11 @@ export default {
     }
     .btn_contain{
       width: 100%;
-      margin-top: 7%;
+      margin-top: .7rem;
       img {
-        width: 40%;
+        width: 3rem;
         height: auto;
       }
-    }
-    .down_arror{
-      width: 5%;
-      height: auto;
     }
   }
 </style>

@@ -1,5 +1,6 @@
 <template>
   <div class="footer_contain">
+    <img class="down_arror" src="../../../assets/img/down_arror.png" alt="">
     <div class="img_contain">
       <img src="../../../assets/img/Email.png" alt="">
       <img src="../../../assets/img/Facebook.png" alt="">
@@ -21,9 +22,16 @@ export default {
   .footer_contain {
     text-align: center;
     width: 100%;
+    position: fixed;
+    bottom: 3%;
+    left: 0;
+    .down_arror{
+      width: 5%;
+      height: auto;
+    }
     .img_contain {
       width: 100%;
-      margin-top: 10%;
+      margin-top: .3rem;
       img {
         width: auto;
         height: 10px;
@@ -36,7 +44,7 @@ export default {
     p {
       font-size: 12px;
       color: #ccc;
-      margin-top: 10%;
+      margin-top: 5%;
     }
   }
 </style>

@@ -3,8 +3,12 @@
     <public-header></public-header>
     <swiper ref="swiper" :options="swiperOption">
       <first-page></first-page>
-      <swiper-slide>2</swiper-slide>
-      <swiper-slide>3</swiper-slide>
+      <SecondPage></SecondPage>
+      <ThreePage></ThreePage>
+      <four-page></four-page>
+      <FivePage></FivePage>
+      <SixPage></SixPage>
+      <SevenPage></SevenPage>
     </swiper>
     <public-footer></public-footer>
   </div>
@@ -13,11 +17,23 @@
 <script>
 import PublicHeader from './components/public_header.vue'
 import FirstPage from './components/first_page'
+import SecondPage from './components/second_page'
+import ThreePage from './components/three_page'
+import FourPage from './components/four_page'
+import FivePage from './components/five_page'
+import SixPage from './components/six_page'
+import SevenPage from './components/seven_page'
 import PublicFooter from './components/public_footer'
 export default {
   components: {
     PublicHeader,
     FirstPage,
+    SecondPage,
+    ThreePage,
+    FourPage,
+    FivePage,
+    SixPage,
+    SevenPage,
     PublicFooter
   },
   data () {
@@ -41,7 +57,7 @@ export default {
   padding: 5% 5%;
   .swiper-container {
     width: 100%;
-    height: 70%;
+    height: 100%;
     overflow: hidden;
     // background-color: #eee;
     .swiper-slide{

@@ -11,13 +11,16 @@ export default {}
 
 <style lang="scss" scoped>
 .header_contain {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 10%;
   display: flex;
   justify-content: space-between;
   .logo_contain {
-    width: 20%;
-    height: auto;
+    width: 1.5rem;
+    height: 1.5rem;
   }
   .menu_contain {
     width: 8%;
