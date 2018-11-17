@@ -4,6 +4,7 @@ import router from './router'
 import store from './store'
 import './assets/css/reset.css'
 import './utils/flexible.js'
+import 'swiper/dist/css/swiper.css'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 
 Vue.use(VueAwesomeSwiper)

@@ -11,6 +11,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: () => import(/* webpackChunkName: "about" */ '../views/mobile_web/index.vue')
+    },
+    {
+      path: '/pc',
+      name: 'pc',
+      component: () => import('../views/pc_web/index.vue')
     }
   ]
 })
