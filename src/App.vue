@@ -4,6 +4,22 @@
   </div>
 </template>
 
+<script>
+export default {
+  mounted () {
+    var that = this
+    window.addEventListener('resize', function () {
+      let clientWidth = document.documentElement.offsetWidth || document.body.offsetWidth
+      if (clientWidth < 980) {
+        that.$router.push('/')
+      } else if (clientWidth > 980) {
+        that.$router.push('/pc')
+      }
+    })
+  }
+}
+</script>
+
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
