@@ -1,10 +1,10 @@
 <template>
   <swiper-slide>
-    <p class="page_title">钱包还是ET开源的好</p>
+    <p class="page_title">{{get_txt.txt_title}}</p>
     <img class="img_main" src="../../../assets/img/first_page_main.png" alt="">
     <div class="link_contain">
-      <a>开源地址</a>
-      <span>下载EosToken钱包</span>
+      <a>{{get_txt.source_address}}</a>
+      <span>{{get_txt.down_address}}</span>
     </div>
     <div class="btn_contain">
       <img src="../../../assets/img/ios_btn.png" alt="">
@@ -15,7 +15,11 @@
 
 <script>
 export default {
-
+  computed: {
+    get_txt () {
+      return this.$t('first_page')
+    }
+  }
 }
 </script>
 

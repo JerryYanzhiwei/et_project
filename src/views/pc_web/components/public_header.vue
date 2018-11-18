@@ -2,18 +2,19 @@
   <div class="header_contain">
     <img class="logo" src="../../../assets/img/logo.png" alt="">
     <ul>
-      <li :class="{'hover': curpage == 1}" @click="changeIndex(1)">首页</li>
-      <li :class="{'hover': curpage == 2}" @click="changeIndex(2)">特点</li>
-      <li :class="{'hover': curpage == 3}" @click="changeIndex(3)">关于我们</li>
-      <li :class="{'hover': curpage == 4}" @click="changeIndex(4)">友情链接</li>
+      <li :class="{'hover': curpage == 1}" @click="changeIndex(1)">{{get_txt.home}}</li>
+      <li :class="{'hover': curpage == 2}" @click="changeIndex(2)">{{get_txt.highlight}}</li>
+      <li :class="{'hover': curpage == 3}" @click="changeIndex(3)">{{get_txt.about_us}}</li>
+      <li :class="{'hover': curpage == 4}" @click="changeIndex(4)">{{get_txt.Lingks}}</li>
       <li class="line"></li>
-      <li class="zh">中文</li>
-      <li class="en">EN</li>
+      <li class="zh" @click="select_lang('zh')">{{get_txt.zh}}</li>
+      <li class="en" @click="select_lang('en')" >{{get_txt.en}}</li>
     </ul>
   </div>
 </template>
 
 <script>
+import { setCookie } from '@/utils/cookies.js'
 export default {
   data () {
     return {
@@ -23,6 +24,15 @@ export default {
   methods: {
     changeIndex (index) {
       this.curpage = index
+    },
+    select_lang (lang) {
+      setCookie('lang', lang, 365)
+      location.reload()
+    }
+  },
+  computed: {
+    get_txt () {
+      return this.$t('header')
     }
   }
 }

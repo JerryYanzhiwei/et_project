@@ -1,11 +1,11 @@
 <template>
   <swiper-slide>
     <div class="first_page">
-      <p class="page_title">钱包还是ET开源的好</p>
+      <p class="page_title">{{get_txt.txt_title}}</p>
       <img class="main_img" src="../../../assets/img/first_page_main.png" alt="">
       <div class="link_contain">
-        <a>开源地址</a>
-        <span>下载EosToken</span>
+        <a>{{get_txt.source_address}}</a>
+        <span>{{get_txt.down_address}}</span>
       </div>
       <div class="btn_contain">
         <img @mouseover="show_ios = hov_ios" @mouseout="show_ios = nor_ios" :src="show_ios" alt="">
@@ -25,6 +25,11 @@ export default {
       hov_ios: require('../../../assets/img/hover_ios_btn.png'),
       nor_and: require('../../../assets/img/android_btn.png'),
       hov_and: require('../../../assets/img/hover_android_btn.png')
+    }
+  },
+  computed: {
+    get_txt () {
+      return this.$t('first_page')
     }
   }
 }

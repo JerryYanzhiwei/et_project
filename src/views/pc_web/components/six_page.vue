@@ -3,17 +3,17 @@
     <div class="six_page">
       <div class="txt_contain">
         <div class="txt_area">
-          <p class="main_txt">我们的愿景:</p>
-          <p class="tip_txt">打造区块链最安全、最高效的生态服务平台</p>
+          <p class="main_txt">{{get_txt.title_one}}</p>
+          <p class="tip_txt">{{get_txt.txt_one}}</p>
         </div>
         <div class="txt_area">
-          <p class="main_txt">我们的使命:</p>
-          <p class="tip_txt">让每个人自由掌控自己的资产</p>
+          <p class="main_txt">{{get_txt.title_two}}</p>
+          <p class="tip_txt">{{get_txt.txt_two}}</p>
         </div>
         <div class="txt_area">
-          <p class="main_txt">价值观:</p>
-          <p class="tip_txt">开源开放 共享未来 安全至上</p>
-          <p class="tip_txt">追求卓越 专业高效 创造价值</p>
+          <p class="main_txt">{{get_txt.title_three}}</p>
+          <p class="tip_txt">{{get_txt.txt_three_one}}</p>
+          <p class="tip_txt">{{get_txt.txt_three_two}}</p>
         </div>
       </div>
       <div class="img_cointain">
@@ -25,7 +25,11 @@
 
 <script>
 export default {
-
+  computed: {
+    get_txt () {
+      return this.$t('six_page')
+    }
+  }
 }
 </script>
 

@@ -2,9 +2,9 @@
   <swiper-slide>
     <div class="five_page">
       <div class="txt_contain">
-        <p class="main_txt">内置交易所</p>
-        <p class="tip_txt">ET交易所是全球首个倡导完全去中心化的分布式交易所，旨在建立一个高效、透明的</p>
-        <p class="tip_txt1">符合区块链精神的资产交易平台，ET交易所接口对所有钱包开放</p>
+        <p class="main_txt">{{get_txt.txt_title}}</p>
+        <p class="tip_txt">{{get_txt.source_address}}</p>
+        <p class="tip_txt1">{{get_txt.down_address}}</p>
       </div>
       <div class="img_cointain">
         <img src="../../../assets/img/main_four.png" alt="">
@@ -15,7 +15,11 @@
 
 <script>
 export default {
-
+  computed: {
+    get_txt () {
+      return this.$t('five_page')
+    }
+  }
 }
 </script>
 

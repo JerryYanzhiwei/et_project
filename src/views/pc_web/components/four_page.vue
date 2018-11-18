@@ -2,8 +2,8 @@
   <swiper-slide>
     <div class="four_page">
       <div class="txt_contain">
-        <p class="main_txt">行情快讯</p>
-        <p class="tip_txt">一站式行情快讯, 全天候关注行业动态, 精确把握资产行情。</p>
+        <p class="main_txt">{{get_txt.txt_title}}</p>
+        <p class="tip_txt">{{get_txt.source_address}}</p>
       </div>
       <div class="img_cointain">
         <img src="../../../assets/img/main_three.png" alt="">
@@ -14,7 +14,11 @@
 
 <script>
 export default {
-
+  computed: {
+    get_txt () {
+      return this.$t('four_page')
+    }
+  }
 }
 </script>
 

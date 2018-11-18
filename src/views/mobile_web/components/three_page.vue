@@ -1,9 +1,9 @@
 <template>
   <swiper-slide>
-    <p class="top_txt">DApp生态</p>
+    <p class="top_txt">{{get_txt.txt_title}}</p>
     <div class="body">
-      <p class="sm_txt">前联合数百家DApp开发团队打造DApp超级入口，</p>
-      <p class="sm_txt_a">促进EOS（柚子）生态共建共享。</p>
+      <p class="sm_txt">{{get_txt.txt_one}}</p>
+      <p class="sm_txt_a">{{get_txt.txt_two}}</p>
     </div>
     <img class="img_main" src="../../../assets/img/main_two.png" alt="">
   </swiper-slide>
@@ -11,7 +11,11 @@
 
 <script>
 export default {
-
+  computed: {
+    get_txt () {
+      return this.$t('three_page')
+    }
+  }
 }
 </script>
 

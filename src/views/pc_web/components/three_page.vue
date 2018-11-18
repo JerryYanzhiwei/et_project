@@ -2,8 +2,8 @@
   <swiper-slide>
     <div class="three_page">
       <div class="txt_contain">
-        <p class="main_txt">DApp生态</p>
-        <p class="tip_txt">联合数百家DApp开发团队打造DApp超级入口，促进EOS（柚子）生态共建共享。</p>
+        <p class="main_txt">{{get_txt.txt_title}}</p>
+        <p class="tip_txt">{{get_txt.source_address}}</p>
       </div>
       <div class="img_cointain">
         <img src="../../../assets/img/main_two.png" alt="">
@@ -14,7 +14,11 @@
 
 <script>
 export default {
-
+  computed: {
+    get_txt () {
+      return this.$t('three_page')
+    }
+  }
 }
 </script>
 

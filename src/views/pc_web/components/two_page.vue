@@ -2,8 +2,8 @@
   <swiper-slide>
     <div class="two_page">
       <div class="txt_contain">
-        <p class="main_txt">开放开源</p>
-        <p class="tip_txt">前端后台全部开源, 同事支持Android&IOS双平台</p>
+        <p class="main_txt">{{get_txt.txt_title}}</p>
+        <p class="tip_txt">{{get_txt.source_address}}</p>
       </div>
       <div class="img_cointain">
         <img src="../../../assets/img/right_main.png" alt="">
@@ -14,7 +14,11 @@
 
 <script>
 export default {
-
+  computed: {
+    get_txt () {
+      return this.$t('two_page')
+    }
+  }
 }
 </script>
 

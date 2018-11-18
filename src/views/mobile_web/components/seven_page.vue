@@ -29,7 +29,7 @@ export default {
     img {
       font-size: 0;
       width: 2rem;
-      margin-left: .42rem;
+      margin-left: .3rem;
       margin-top: 1.2rem;
       &:nth-child(1) {
         margin-left: 0;

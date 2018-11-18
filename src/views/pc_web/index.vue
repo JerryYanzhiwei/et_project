@@ -11,6 +11,7 @@
       <SevenPage></SevenPage>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
+    <img class="mouse_tip" src="../../assets/img/img_mouse.png" alt="">
     <PublicFooter></PublicFooter>
   </div>
 </template>
@@ -60,9 +61,17 @@ export default {
     height: 100%;
     padding: 0 3% 0 3%;
     overflow: hidden;
+    position: relative;
   }
   .swiper-container,
   .swiper-container-vertical > .swiper-wrapper {
     height: 100%;
+  }
+  .mouse_tip {
+    z-index: 9999;
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translate3d(0px, -50%, 0);
   }
 </style>

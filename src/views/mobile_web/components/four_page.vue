@@ -1,8 +1,8 @@
 <template>
   <swiper-slide>
-    <p class="top_txt">行情快讯</p>
+    <p class="top_txt">{{get_txt.txt_title}}</p>
     <div class="body">
-      <p class="sm_txt">一站式行情快讯，全天候关注行业动态，精确把握资产行情。</p>
+      <p class="sm_txt">{{get_txt.source_address}}</p>
     </div>
     <img class="img_main" src="../../../assets/img/main_three.png" alt="">
   </swiper-slide>
@@ -10,7 +10,11 @@
 
 <script>
 export default {
-
+  computed: {
+    get_txt () {
+      return this.$t('four_page')
+    }
+  }
 }
 </script>
 
