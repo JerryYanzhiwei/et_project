@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss" scoped>
   .footer_contain {
+    z-index: 9999;
     width: 100%;
     height: 40px;
     display: flex;
@@ -34,9 +35,13 @@ export default {
     .img_contain {
       height: 100%;
       img {
+        cursor: pointer;
         width: auto;
         height: 10px;
         margin-left: 25px;
+      }
+      img:hover {
+        opacity: .5;
       }
     }
   }

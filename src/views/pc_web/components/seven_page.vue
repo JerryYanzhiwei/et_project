@@ -51,6 +51,8 @@ export default {
 <style lang="scss">
   .swiper-slide {
     .seven_page {
+      position: relative;
+      z-index: 9999;
       width: 100%;
       height: 100%;
       padding: 0 5vw 0 5vw;
@@ -65,6 +67,10 @@ export default {
           margin-top: 12vh;
           img {
             width: 50%;
+            cursor: pointer;
+          }
+          img:hover {
+            opacity: .6;
           }
           &:nth-child(1) {
             margin: 0;

@@ -1,7 +1,7 @@
 <template>
   <div class="contain">
-    <PublicHeader></PublicHeader>
-    <swiper ref="swiper" :options="swiperOption">
+    <PublicHeader :homeState=homeState v-on:change="changeSlide"></PublicHeader>
+    <swiper ref="myswiper" :options="swiperOption">
       <FirstPage></FirstPage>
       <TwoPage></TwoPage>
       <ThreePage></ThreePage>
@@ -39,7 +39,9 @@ export default {
     SevenPage
   },
   data () {
+    let that = this
     return {
+      homeState: 0,
       swiperOption: {
         direction: 'vertical',
         slidesPerView: 1,
@@ -48,8 +50,27 @@ export default {
         pagination: {
           el: '.swiper-pagination',
           clickable: true
+        },
+        on: {
+          init: function () {
+            this.realIndex === 0 && (that.homeState = 0)
+          },
+          slideChange: function () {
+            that.homeState = this.realIndex
+          }
         }
       }
+    }
+  },
+  computed: {
+    swiper () {
+      return this.$refs.myswiper.swiper
+    }
+  },
+  methods: {
+    changeSlide (index) {
+      console.log(index)
+      this.swiper.slideTo(index)
     }
   }
 }
@@ -73,5 +94,8 @@ export default {
     right: 3%;
     top: 50%;
     transform: translate3d(0px, -50%, 0);
+  }
+  .swiper-container-vertical > .swiper-pagination-bullets {
+    width: 2vw;
   }
 </style>

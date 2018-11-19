@@ -1,7 +1,7 @@
 <template>
   <div class="main_contain">
-    <public-header></public-header>
-    <swiper ref="swiper" :options="swiperOption">
+    <public-header v-on:change="changeSlide" v-on:showState="changeIndex"></public-header>
+    <swiper ref="myswiper" :options="swiperOption">
       <first-page></first-page>
       <SecondPage></SecondPage>
       <ThreePage></ThreePage>
@@ -10,7 +10,7 @@
       <SixPage></SixPage>
       <SevenPage></SevenPage>
     </swiper>
-    <public-footer></public-footer>
+    <public-footer :homeState=homeState></public-footer>
   </div>
 </template>
 
@@ -37,13 +37,41 @@ export default {
     PublicFooter
   },
   data () {
-    // let data = this
+    let that = this
     return {
+      homeState: 0,
       swiperOption: {
         direction: 'vertical',
         slidesPerView: 1,
         spaceBetween: 0,
-        mousewheel: true
+        mousewheel: true,
+        on: {
+          init: function () {
+            this.realIndex === 0 && (that.homeState = 0)
+          },
+          slideChange: function () {
+            that.homeState = this.realIndex
+            console.log(that.homeState)
+          }
+        }
+      }
+    }
+  },
+  computed: {
+    swiper () {
+      return this.$refs.myswiper.swiper
+    }
+  },
+  methods: {
+    changeSlide (index) {
+      this.swiper.slideTo(index)
+    },
+    changeIndex (state) {
+      console.log(state)
+      if (state) {
+        document.getElementsByClassName('swiper-container')[0].style.zIndex = -1
+      } else {
+        document.getElementsByClassName('swiper-container')[0].style.zIndex = 9999
       }
     }
   }
@@ -67,6 +95,15 @@ export default {
   }
   .swiper-container-vertical > .swiper-wrapper {
     height: 100%;
+  }
+  .main_contain .swiper-container {
+    -webkit-tap-highlight-color:transparent;
+  }
+  .swiper-container {
+      // z-index: -1;
+    &.showNav {
+      z-index: -1;
+    }
   }
 }
 </style>

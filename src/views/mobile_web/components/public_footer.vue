@@ -1,6 +1,6 @@
 <template>
   <div class="footer_contain">
-    <img class="down_arror" src="../../../assets/img/down_arror.png" alt="">
+    <img class="down_arror" v-if="homeState !== 6" src="../../../assets/img/down_arror.png" alt="">
     <div class="img_contain">
       <img src="../../../assets/img/Email.png" alt="">
       <img src="../../../assets/img/Facebook.png" alt="">
@@ -14,7 +14,12 @@
 
 <script>
 export default {
-
+  props: {
+    homeState: {
+      type: Number,
+      default: 0
+    }
+  }
 }
 </script>
 

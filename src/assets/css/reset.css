@@ -60,3 +60,7 @@ html, body, #app {
 .swiper-container-vertical > .swiper-pagination-bullets {
   left: 10px;
 }
+.swiper-container-vertical > .swiper-pagination-bullets .swiper-pagination-bullet:hover {
+    opacity: .5;
+}
+html,body{-webkit-text-size-adjust: 100%;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}

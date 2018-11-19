@@ -28,7 +28,7 @@ export default {
     .five_page {
       width: 100%;
       height: 100%;
-      padding: 0 5vw 0 5vw;
+      padding: 0 14vw 0 15vw;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -37,11 +37,11 @@ export default {
         width: 50%;
         text-align: left;
         p {
-          font-size: 12px;
+          font-size: 16px;
         }
         .main_txt {
           margin-bottom: 8%;
-          font-size: 24px;
+          font-size: 36px;
         }
         .tip_txt1 {
           margin-top: 1.5vh;
@@ -49,6 +49,7 @@ export default {
       }
       .img_cointain {
         width: 50%;
+        text-align: right;
         img {
           width: 40%;
           height: auto;

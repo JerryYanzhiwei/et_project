@@ -8,8 +8,14 @@
 export default {
   mounted () {
     var that = this
+    let clientWidth = document.documentElement.offsetWidth || document.body.offsetWidth
+    if (clientWidth < 980) {
+      that.$router.push('/')
+    } else if (clientWidth > 980) {
+      that.$router.push('/pc')
+    }
     window.addEventListener('resize', function () {
-      let clientWidth = document.documentElement.offsetWidth || document.body.offsetWidth
+      clientWidth = document.documentElement.offsetWidth || document.body.offsetWidth
       if (clientWidth < 980) {
         that.$router.push('/')
       } else if (clientWidth > 980) {

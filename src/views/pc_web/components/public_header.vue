@@ -2,13 +2,13 @@
   <div class="header_contain">
     <img class="logo" src="../../../assets/img/logo.png" alt="">
     <ul>
-      <li :class="{'hover': curpage == 1}" @click="changeIndex(1)">{{get_txt.home}}</li>
-      <li :class="{'hover': curpage == 2}" @click="changeIndex(2)">{{get_txt.highlight}}</li>
-      <li :class="{'hover': curpage == 3}" @click="changeIndex(3)">{{get_txt.about_us}}</li>
-      <li :class="{'hover': curpage == 4}" @click="changeIndex(4)">{{get_txt.Lingks}}</li>
+      <li :class="{'hover': curpage == 1}" @click="changeIndex(1), changeSlide(0)">{{get_txt.home}}</li>
+      <li :class="{'hover': curpage == 2}" @click="changeIndex(2), changeSlide(1)">{{get_txt.highlight}}</li>
+      <li :class="{'hover': curpage == 3}" @click="changeIndex(3), changeSlide(5)">{{get_txt.about_us}}</li>
+      <li :class="{'hover': curpage == 4}" @click="changeIndex(4), changeSlide(6)">{{get_txt.Lingks}}</li>
       <li class="line"></li>
       <li class="zh" @click="select_lang('zh')">{{get_txt.zh}}</li>
-      <li class="en" @click="select_lang('en')" >{{get_txt.en}}</li>
+      <li class="en" @click="select_lang('en')">{{get_txt.en}}</li>
     </ul>
   </div>
 </template>
@@ -16,6 +16,23 @@
 <script>
 import { setCookie } from '@/utils/cookies.js'
 export default {
+  props: {
+    homeState: {
+      type: Number,
+      default: 0
+    }
+  },
+  watch: {
+    homeState (newVal, oldVal) {
+      newVal === 0 && this.changeIndex(1)
+      newVal === 1 && this.changeIndex(2)
+      newVal === 2 && this.changeIndex(2)
+      newVal === 3 && this.changeIndex(2)
+      newVal === 4 && this.changeIndex(2)
+      newVal === 5 && this.changeIndex(3)
+      newVal === 6 && this.changeIndex(4)
+    }
+  },
   data () {
     return {
       curpage: 1
@@ -24,6 +41,9 @@ export default {
   methods: {
     changeIndex (index) {
       this.curpage = index
+    },
+    changeSlide (index) {
+      this.$emit('change', index)
     },
     select_lang (lang) {
       setCookie('lang', lang, 365)
@@ -71,6 +91,9 @@ export default {
           border-image: none;
           margin-left: 2vw;
           font-size: 12px;
+        }
+        &.zh:hover, &.en:hover {
+          opacity: .5;
         }
         &.hover {
           border-image: linear-gradient(#3A7FF3,#353CE0) 1 1;

@@ -38,7 +38,7 @@ export default {
     .six_page {
       width: 100%;
       height: 100%;
-      padding: 0 5vw 0 5vw;
+      padding: 0 0 0 15vw;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -47,7 +47,7 @@ export default {
         width: 50%;
         text-align: left;
         p {
-          font-size: 12px;
+          font-size: 16px;
         }
         .txt_area {
           margin-top: 5vh;
@@ -57,18 +57,19 @@ export default {
         }
         .main_txt {
           margin-bottom: 8%;
-          font-size: 24px;
+          font-size: 36px;
         }
         .tip_txt1 {
           margin-top: 1.5vh;
         }
         .tip_txt {
-          font-size: 12px;
+          font-size: 16px;
           margin-top: 1vh;
         }
       }
       .img_cointain {
         width: 60%;
+        text-align: right;
         img {
           width: 100%;
           height: auto;
