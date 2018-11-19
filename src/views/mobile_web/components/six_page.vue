@@ -30,7 +30,7 @@ export default {
 <style lang="scss" scoped>
   .swiper-slide {
     .img_earth {
-      padding-top: 1rem;
+      padding-top: 1.3rem;
       width: 3.5rem;
     }
     .txt_contain{

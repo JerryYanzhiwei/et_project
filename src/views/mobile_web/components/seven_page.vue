@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss" scoped>
   .img_contain {
-    padding-top: .6rem;
+    padding-top: 1rem;
     img {
       font-size: 0;
       width: 2rem;

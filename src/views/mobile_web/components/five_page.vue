@@ -22,7 +22,7 @@ export default {
   .swiper-slide {
     width: 100%;
     height: 100%;
-    padding-top: .8rem;
+    padding-top: 1rem;
     .top_txt {
       font-size: .4rem;
     }
