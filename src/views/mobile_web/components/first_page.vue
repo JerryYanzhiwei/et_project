@@ -25,7 +25,12 @@ export default {
 
 <style lang="scss" scoped>
   .swiper-slide {
-    padding-top: 1.5rem;
+    // padding-top: 1.5rem;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .page_title {
       padding-top: .12rem;
       font-size: .4rem;
@@ -33,7 +38,7 @@ export default {
     .img_main{
       width: 100%;
       height: auto;
-      margin-top: .15rem;
+      margin-top: .5rem;
     }
     .link_contain{
       margin-top: .7rem;

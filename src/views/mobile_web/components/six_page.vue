@@ -29,9 +29,15 @@ export default {
 
 <style lang="scss" scoped>
   .swiper-slide {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .img_earth {
-      padding-top: 1.3rem;
+      // padding-top: 1.3rem;
       width: 3.5rem;
+      margin-top: -2rem;
     }
     .txt_contain{
       margin-top: 0.2rem;

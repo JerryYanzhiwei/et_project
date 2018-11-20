@@ -21,10 +21,13 @@ export default {
 
 <style lang='scss' scoped>
   .swiper-slide {
+    display: flex;
     width: 100%;
-    height: 100%;
-    padding-top: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     .top_txt {
+      margin-top: -1rem;
       font-size: .4rem;
     }
     .sm_txt {

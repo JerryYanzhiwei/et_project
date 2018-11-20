@@ -85,10 +85,10 @@ export default {
         font-size: 14px;
         cursor: pointer;
         &:hover {
-          border-image: linear-gradient(#3A7FF3,#353CE0) 1 1;
+          border-color: #353CE0;
         }
         &.zh, &.en {
-          border-image: none;
+          border-color: transparent;
           margin-left: 2vw;
           font-size: 12px;
         }
@@ -96,7 +96,7 @@ export default {
           opacity: .5;
         }
         &.hover {
-          border-image: linear-gradient(#3A7FF3,#353CE0) 1 1;
+          border-color: #353CE0;
         }
         &.line {
           width: 2px;

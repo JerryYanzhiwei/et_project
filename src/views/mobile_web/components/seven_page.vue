@@ -24,15 +24,30 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+  .swiper-slide {
+    display: flex;
+    align-items: center;
+  }
   .img_contain {
-    padding-top: 1rem;
+    // padding-top: .6rem;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    margin-top: -.8rem;
     img {
       font-size: 0;
       width: 2rem;
       margin-left: .3rem;
       margin-top: 1.2rem;
       &:nth-child(1) {
+        margin-top: 0;
         margin-left: 0;
+      }
+      &:nth-child(2) {
+        margin-top: 0;
+      }
+      &:nth-child(3) {
+        margin-top: 0;
       }
       &:nth-child(4) {
         margin-left: 0;
