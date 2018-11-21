@@ -9,11 +9,15 @@
       </div>
       <div class="btn_contain">
         <span class="btn_img_contain">
-          <img class="btn_img" @mouseover="show_ios = hov_ios, show_down_ios = true" @mouseout="show_ios = nor_ios, show_down_ios = false" :src="show_ios" alt="">
+          <a href="https://apple.eostoken.im/">
+            <img class="btn_img" @mouseover="show_ios = hov_ios, show_down_ios = true" @mouseout="show_ios = nor_ios, show_down_ios = false" :src="show_ios" alt="">
+          </a>
           <img v-show="show_down_ios" class="btn_down" src="../../../assets/img/download_apple.png" alt="">
         </span>
         <span class="btn_img_contain">
-          <img class="btn_img" @mouseover="show_and = hov_and, show_down_and = true" @mouseout="show_and = nor_and, show_down_and = false" :src="show_and" alt="">
+          <a href="http://android.eostoken.im/android">
+            <img class="btn_img" @mouseover="show_and = hov_and, show_down_and = true" @mouseout="show_and = nor_and, show_down_and = false" :src="show_and" alt="">
+          </a>
           <img v-show="show_down_and" class="btn_down" src="../../../assets/img/download_android.png" alt="">
         </span>
       </div>
@@ -79,6 +83,9 @@ export default {
         margin-top: 3vh;
         .btn_img_contain {
           position: relative;
+          a {
+            display: inline-block;
+          }
           .btn_down {
             position: absolute;
             top: -2rem;
