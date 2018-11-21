@@ -81,7 +81,7 @@ export default {
           position: relative;
           .btn_down {
             position: absolute;
-            top: .6rem;
+            top: -2rem;
             left: 50%;
             margin-left: -50px;
             width: 100px;
@@ -90,8 +90,8 @@ export default {
         }
         img.btn_img {
           cursor: pointer;
-          width: 12vw;
-          height: 8vh;
+          width: 3rem;
+          height: 1.3rem;
           margin-left: 1vw;
           &:first-child {
             margin: 0;

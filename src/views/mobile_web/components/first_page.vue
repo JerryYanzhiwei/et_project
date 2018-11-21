@@ -7,8 +7,12 @@
       <span>{{get_txt.down_address}}</span>
     </div>
     <div class="btn_contain">
-      <img src="../../../assets/img/ios_btn.png" alt="">
-      <img src="../../../assets/img/android_btn.png" alt="">
+      <a href="https://apple.eostoken.im/">
+        <img src="../../../assets/img/ios_btn.png" alt="">
+      </a>
+      <a href="http://android.eostoken.im/android">
+        <img src="../../../assets/img/android_btn.png" alt="">
+      </a>
     </div>
   </swiper-slide>
 </template>
