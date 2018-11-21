@@ -5,7 +5,10 @@
       <img src="../../../assets/img/Email.png" alt="">
       <img src="../../../assets/img/Facebook.png" alt="">
       <img src="../../../assets/img/Twitter.png" alt="">
-      <img src="../../../assets/img/WeChat.png" alt="">
+      <span class='WeChat'>
+        <img @click='showQRCode' src="../../../assets/img/WeChat.png" alt="">
+        <img v-show='code'  class='QR_Code' src="../../../assets/img/QR_Code.jpg" alt="">
+      </span>
       <img src="../../../assets/img/Weibo.png" alt="">
     </div>
     <p>Copyright  ©  2018  EosToken, All rights reserved</p>
@@ -14,12 +17,23 @@
 
 <script>
 export default {
+  data () {
+    return {
+      code: false
+    }
+  },
   props: {
     homeState: {
       type: Number,
       default: 0
     }
+  },
+  methods: {
+    showQRCode () {
+      this.code = !this.code
+    }
   }
+
 }
 </script>
 
@@ -30,6 +44,7 @@ export default {
     position: fixed;
     bottom: 3%;
     left: 0;
+    z-index:99;
     .down_arror{
       width: 5%;
       height: auto;
@@ -50,6 +65,17 @@ export default {
       font-size: 12px;
       color: #ccc;
       margin-top: 5%;
+    }
+    .WeChat{
+      position:relative;
+      margin-left:10%;
+      .QR_Code{
+        position:absolute;
+        top:-227%;
+        left:-100%;
+        height:0.8rem;
+        width:0.8rem;
+      }
     }
   }
 </style>

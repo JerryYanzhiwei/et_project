@@ -5,7 +5,10 @@
       <img src="../../../assets/img/Email.png" alt="">
       <img src="../../../assets/img/Facebook.png" alt="">
       <img src="../../../assets/img/Twitter.png" alt="">
-      <img src="../../../assets/img/WeChat.png" alt="">
+      <span class='WeChat'>
+        <img @click='showQRCode' src="../../../assets/img/WeChat.png" alt="">
+        <img v-show='QRCode' class='QR_Code' src="../../../assets/img/QR_Code.jpg" alt="">
+      </span>
       <img src="../../../assets/img/Weibo.png" alt="">
     </div>
   </div>
@@ -13,7 +16,16 @@
 
 <script>
 export default {
-
+  data () {
+    return {
+      QRCode: false
+    }
+  },
+  methods: {
+    showQRCode () {
+      this.QRCode = !this.QRCode
+    }
+  }
 }
 </script>
 
@@ -42,6 +54,19 @@ export default {
       }
       img:hover {
         opacity: .5;
+      }
+    }
+    .WeChat{
+      position:relative;
+      .QR_Code{
+        position:absolute;
+        top:-490%;
+        left:-93%;
+        height:80px;
+        width:80px;
+      }
+      .QR_Code:hover{
+        opacity: 1;
       }
     }
   }
