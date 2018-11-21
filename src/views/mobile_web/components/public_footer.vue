@@ -2,14 +2,22 @@
   <div class="footer_contain">
     <img class="down_arror" v-if="homeState !== 6" src="../../../assets/img/down_arror.png" alt="">
     <div class="img_contain">
-      <img src="../../../assets/img/Email.png" alt="">
-      <img src="../../../assets/img/Facebook.png" alt="">
-      <img src="../../../assets/img/Twitter.png" alt="">
+      <span>
+        <img src="../../../assets/img/Email.png" alt="">
+      </span>
+      <span>
+        <img src="../../../assets/img/Facebook.png" alt="">
+      </span>
+      <span>
+        <img src="../../../assets/img/Twitter.png" alt="">
+      </span>
       <span class='WeChat'>
         <img @click='showQRCode' src="../../../assets/img/WeChat.png" alt="">
         <img v-show='code'  class='QR_Code' src="../../../assets/img/QR_Code.jpg" alt="">
       </span>
-      <img src="../../../assets/img/Weibo.png" alt="">
+      <span>
+        <img src="../../../assets/img/Weibo.png" alt="">
+      </span>
     </div>
     <p>Copyright  ©  2018  EosToken, All rights reserved</p>
   </div>
@@ -55,16 +63,20 @@ export default {
       img {
         width: auto;
         height: 10px;
-        margin-left: 10%;
-        &:first-child {
-          margin: 0;
-        }
+        // margin-left: 10%;
       }
     }
     p {
       font-size: 12px;
       color: #ccc;
       margin-top: 5%;
+    }
+    span {
+      display: inline-block;
+      margin-left: 10%;
+      &:first-child {
+        margin: 0;
+      }
     }
     .WeChat{
       position:relative;
