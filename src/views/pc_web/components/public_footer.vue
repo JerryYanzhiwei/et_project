@@ -6,7 +6,7 @@
       <img src="../../../assets/img/Facebook.png" alt="">
       <img src="../../../assets/img/Twitter.png" alt="">
       <span class='WeChat'>
-        <img @click='showQRCode' src="../../../assets/img/WeChat.png" alt="">
+        <img @mouseover='showQRCode' @mouseout='closeQRCode' src="../../../assets/img/WeChat.png" alt="">
         <img v-show='QRCode' class='QR_Code' src="../../../assets/img/QR_Code.jpg" alt="">
       </span>
       <img src="../../../assets/img/Weibo.png" alt="">
@@ -23,7 +23,10 @@ export default {
   },
   methods: {
     showQRCode () {
-      this.QRCode = !this.QRCode
+      this.QRCode = true
+    },
+    closeQRCode () {
+      this.QRCode = false
     }
   }
 }
