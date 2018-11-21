@@ -8,8 +8,14 @@
         <a class="down_token">{{get_txt.down_address}}</a>
       </div>
       <div class="btn_contain">
-        <img @mouseover="show_ios = hov_ios" @mouseout="show_ios = nor_ios" :src="show_ios" alt="">
-        <img @mouseover="show_and = hov_and" @mouseout="show_and = nor_and" :src="show_and" alt="">
+        <span class="btn_img_contain">
+          <img class="btn_img" @mouseover="show_ios = hov_ios, show_down_ios = true" @mouseout="show_ios = nor_ios, show_down_ios = false" :src="show_ios" alt="">
+          <img v-show="show_down_ios" class="btn_down" src="../../../assets/img/download_apple.png" alt="">
+        </span>
+        <span class="btn_img_contain">
+          <img class="btn_img" @mouseover="show_and = hov_and, show_down_and = true" @mouseout="show_and = nor_and, show_down_and = false" :src="show_and" alt="">
+          <img v-show="show_down_and" class="btn_down" src="../../../assets/img/download_android.png" alt="">
+        </span>
       </div>
     </div>
   </swiper-slide>
@@ -20,11 +26,13 @@ export default {
   data () {
     return {
       show_ios: require('../../../assets/img/ios_btn.png'),
-      show_and: require('../../../assets/img/ios_btn.png'),
+      show_and: require('../../../assets/img/android_btn.png'),
       nor_ios: require('../../../assets/img/ios_btn.png'),
       hov_ios: require('../../../assets/img/hover_ios_btn.png'),
       nor_and: require('../../../assets/img/android_btn.png'),
-      hov_and: require('../../../assets/img/hover_android_btn.png')
+      hov_and: require('../../../assets/img/hover_android_btn.png'),
+      show_down_ios: false,
+      show_down_and: false
     }
   },
   computed: {
@@ -69,10 +77,20 @@ export default {
       }
       .btn_contain {
         margin-top: 3vh;
-        img {
+        .btn_img_contain {
+          position: relative;
+          .btn_down {
+            position: absolute;
+            top: .6rem;
+            left: .55rem;
+            width: 100px;
+            height: 100px;
+          }
+        }
+        img.btn_img {
           cursor: pointer;
           width: 12vw;
-          // height: 8vh;
+          height: 8vh;
           margin-left: 1vw;
           &:first-child {
             margin: 0;

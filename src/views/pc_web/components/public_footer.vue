@@ -2,18 +2,25 @@
   <div class="footer_contain">
     <span class="text">Copyright  ©  2018  EosToken, All rights reserved</span>
     <div class="img_contain">
-      <img src="../../../assets/img/Email.png" alt="">
-      <img src="../../../assets/img/Facebook.png" alt="">
-      <img src="../../../assets/img/Twitter.png" alt="">
-      <img src="../../../assets/img/WeChat.png" alt="">
-      <img src="../../../assets/img/Weibo.png" alt="">
+      <img class="icon_link" src="../../../assets/img/Email.png" alt="">
+      <img class="icon_link" src="../../../assets/img/Facebook.png" alt="">
+      <img class="icon_link" src="../../../assets/img/Twitter.png" alt="">
+      <span class="wechat">
+        <img @mouseover="showState = true" @mouseout="showState = false" class="icon_link" src="../../../assets/img/WeChat.png" alt="">
+        <img v-show="showState" class="qrcode" src="../../../assets/img/img_qrcode.jpg" alt="">
+      </span>
+      <img class="icon_link" src="../../../assets/img/Weibo.png" alt="">
     </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  data () {
+    return {
+      showState: false
+    }
+  }
 }
 </script>
 
@@ -29,12 +36,21 @@ export default {
     position: fixed;
     bottom: 0;
     left: 0;
+    .wechat {
+      position: relative;
+      .qrcode {
+        position: absolute;
+        width: 2rem;
+        left: -.6rem;
+        bottom: .5rem;
+      }
+    }
     .text {
       color: #ccc;
     }
     .img_contain {
       height: 100%;
-      img {
+      img.icon_link {
         cursor: pointer;
         width: auto;
         height: 10px;
