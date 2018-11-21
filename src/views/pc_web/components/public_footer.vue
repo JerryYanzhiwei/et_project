@@ -60,5 +60,18 @@ export default {
         opacity: .5;
       }
     }
+    .WeChat{
+      position:relative;
+      .QR_Code{
+        position:absolute;
+        top:-490%;
+        left:-93%;
+        height:80px;
+        width:80px;
+      }
+      .QR_Code:hover{
+        opacity: 1;
+      }
+    }
   }
 </style>

@@ -82,7 +82,8 @@ export default {
           .btn_down {
             position: absolute;
             top: .6rem;
-            left: .55rem;
+            left: 50%;
+            margin-left: -50px;
             width: 100px;
             height: 100px;
           }
